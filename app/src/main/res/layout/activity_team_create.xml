@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pavisalavisa.alias.TeamCreateActivity">
+
+    <TableLayout
+        android:id="@+id/players_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:verticalScrollbarPosition="right"
+        android:scrollbars="vertical"
+
+        >
+        <TableRow
+            android:id="@+id/first_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#add8e6"
+            android:alpha="0.8">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/team"
+                android:textSize="20sp"
+
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/p1"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/p2"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/start_game_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/players_table"
+        android:layout_marginTop="5dp"
+        android:text="@string/start_button"
+        android:textSize="17pt"
+        android:elevation="0dp"
+        android:onClick="startClicked"/>
+
+</RelativeLayout>

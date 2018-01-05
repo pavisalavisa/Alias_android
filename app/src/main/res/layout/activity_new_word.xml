@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pavisalavisa.alias.NewWordActivity">
+
+    <TextView
+        android:id="@+id/new_word_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_word_text_view"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"/>
+    <EditText
+        android:id="@+id/new_word_text_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_word_title"
+        android:layout_marginTop="25dp"
+        android:hint="@string/new_word_hint"/>
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_word_text_edit"
+        android:text="@string/add"
+        android:background="#ffffff"
+        android:hapticFeedbackEnabled="true"
+        android:onClick="addNewWord"
+        />
+
+</RelativeLayout>

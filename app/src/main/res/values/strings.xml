@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Alias</string>
+    <string name="main_activity_title">Alias</string>
+    <string name="start_button">Start</string>
+    <string name="add_new_word_button">New word</string>
+    <string name="options_button">Options</string>
+    <string name="exit_button">Exit</string>
+    <string name="team">Team</string>
+    <string name="p1">P1</string>
+    <string name="p2">P2</string>
+    <string name="new_word_text_view">Insert a new word:</string>
+    <string name="new_word_hint">e.g. Beer</string>
+    <string name="add">Add</string>
+
+</resources>
