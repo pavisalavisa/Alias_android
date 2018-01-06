@@ -10,35 +10,50 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class TeamCreateActivity extends AppCompatActivity {
+    private Game game;
+    DialogFragment dialog;
+    TableLayout table;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_create);
-        Intent intent=getIntent();
+        game=Game.getCurrentGame();
+        table=(TableLayout)findViewById(R.id.players_table);
     }
 
     public void addNewTeam(View view){
         //TODO: dodati funkcionalnost timovac
-        String name="aaa";
-        DialogFragment dialog=new NewTeamFragment();
+        popDialog();
+    }
+    private void popDialog(){
+        dialog=new NewTeamFragment();
         dialog.show(getFragmentManager(),"newTeamDialog");
-        //TableLayout table=(TableLayout)findViewById(R.id.players_table);
-        //TableRow tr=new TableRow(this);
-        //addItemsToRow(tr,name);
-        //table.addView(tr);
+    }
+
+    /**
+     * Called by the dialog fragment
+     */
+    public void addNewRow(){
+        TableRow tr=new TableRow(this);
+        addItemsToRow(tr,game.getLastAddedTeam());
+        table.addView(tr);
+    }
+
+    private void addItemsToRow(TableRow tr, Team team){
+        //TODO: popravi font i izgled ovog sta se ubacuje
+        TextView teamName=new TextView(this);
+        teamName.setText(team.getTeamName());
+        tr.addView(teamName);
+
+        TextView playerOneName=new TextView(this);
+        playerOneName.setText(team.getPlayerOne());
+        tr.addView(playerOneName);
+
+        TextView playerTwoName=new TextView(this);
+        playerTwoName.setText(team.getPlayerTwo());
+        tr.addView(playerTwoName);
     }
 
 
-    private void addItemsToRow(TableRow tr, String item){
-        TextView tw=new TextView(this);
-        tw.setText(item);
-        tr.addView(tw);
-        TextView tw2=new TextView(this);
-        TextView tw3=new TextView(this);
-        tr.addView(tw2);
-        tr.addView(tw3);
-
-
-    }
 }

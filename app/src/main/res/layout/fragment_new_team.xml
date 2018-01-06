@@ -19,6 +19,7 @@
             android:layout_weight="1"
             android:text="@string/team"/>
         <EditText
+            android:id="@+id/team_name_edit_text"
             android:layout_margin="10dp"
             android:layout_weight="3"
             android:layout_width="wrap_content"
@@ -40,6 +41,7 @@
             android:layout_weight="1"
             android:text="@string/p1"/>
         <EditText
+            android:id="@+id/player_one_edit_text"
             android:layout_margin="10dp"
             android:layout_weight="3"
             android:layout_width="wrap_content"
@@ -61,6 +63,7 @@
             android:layout_weight="1"
             android:text="@string/p2"/>
         <EditText
+            android:id="@+id/player_two_edit_text"
             android:layout_margin="10dp"
             android:layout_weight="3"
             android:layout_width="wrap_content"
@@ -82,14 +85,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/cancel"
-            android:onClick="closeDialog"/><!--TODO: napravi ovu funkciju-->
+            /><!--TODO: napravi ovu funkciju-->
         <Button
             android:id="@+id/confirm_adding_team_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/ok"
-            android:onClick=""/<!--TODO: dodaj ovu funkciju-->
+            android:text="@string/ok"/>
         </LinearLayout>
 
 
