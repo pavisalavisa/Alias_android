@@ -52,10 +52,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
+        android:layout_margin="16dp"
         android:layout_below="@id/players_table"
         android:layout_alignRight="@id/players_table"
         android:src="@mipmap/ic_add_button"
-        android:backgroundTint="#add8e6"
         android:onClick="addNewTeam"
         />
     <Button
