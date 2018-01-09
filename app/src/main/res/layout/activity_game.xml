@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pavisalavisa.alias.gameActivity">
+
+    <TextView
+        android:id="@+id/countdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="00:00"
+        android:textSize="72sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/word_to_guess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:text="word"
+        android:textSize="72sp"
+        android:textAlignment="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/wrong_answer_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:background="@color/colorAccent"
+            android:onClick="wrongAnswerButtonClicked"
+            android:text="Wrong!"/>
+        <Button
+            android:id="@+id/right_answer_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:background="@color/colorAccent"
+            android:onClick ="righAnswerButtonClicked"
+            android:text="Right!"/>
+    </LinearLayout>
+
+</RelativeLayout>

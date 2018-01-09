@@ -23,8 +23,7 @@ public class NewWordActivity extends AppCompatActivity {
         TextView tw=(TextView)findViewById(R.id.new_word_text_edit);
         String word=tw.getText().toString();
         if(word.length()<2){
-            Toast toast= Toast.makeText(this,"Word should be at least 3 characters long",Toast.LENGTH_LONG);
-            toast.show();
+            toastAnnouncement("Word should be at least 3 characters long");
             return;
         }
         new AddNewWordTask().execute(word);
@@ -39,6 +38,7 @@ public class NewWordActivity extends AppCompatActivity {
         protected Boolean doInBackground(String... params) {
             SQLiteOpenHelper dbHelper=new AliasDatabaseHelper(NewWordActivity.this);
             try{
+
                 itemValues=new ContentValues();
                 itemValues.put("WORD",params[0]);
                 SQLiteDatabase db=dbHelper.getWritableDatabase();
@@ -46,15 +46,21 @@ public class NewWordActivity extends AppCompatActivity {
                 db.close();
                 return true;
             }catch(SQLiteException e){
+                e.printStackTrace();
                 return false;
             }
         }
 
         protected void onPostExecute(Boolean success){
             if(!success){
-                Toast toast=Toast.makeText(NewWordActivity.this,"Database unavailable",Toast.LENGTH_SHORT);
-                toast.show();
+                toastAnnouncement("Database unavailable");
             }
+            toastAnnouncement("Added a new word!");
         }
+    }
+
+    private void toastAnnouncement(String text){
+        Toast toast=Toast.makeText(NewWordActivity.this,text,Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

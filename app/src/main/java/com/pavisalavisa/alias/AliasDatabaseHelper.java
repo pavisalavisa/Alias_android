@@ -34,8 +34,8 @@ public class AliasDatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void updateMyDatabase(SQLiteDatabase db,int oldVersion,int newVersion){
-        db.execSQL("CREATE TABLE ITEMS (_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "WORD TEXT");
-        insertItem(db,"pave");
+        db.execSQL("CREATE TABLE ITEMS(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "WORD TEXT);");
+
     }
 }

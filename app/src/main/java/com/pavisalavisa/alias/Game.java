@@ -2,6 +2,7 @@ package com.pavisalavisa.alias;
 
 import android.os.CountDownTimer;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -58,5 +59,15 @@ public class Game {
 
     public Team getLastAddedTeam(){
         return currentGame.teams.getLast();
+    }
+
+    public Boolean hasTeams()
+    {
+        return !teams.isEmpty();
+    }
+
+    public Iterator<Team> getTeamIterator()
+    {
+        return teams.iterator();
     }
 }

@@ -22,7 +22,6 @@ public class NewTeamFragment extends DialogFragment{
     private String teamName;
     private String playerOne;
     private String playerTwo;
-    private Activity parentActivity;
 
 
     @Override

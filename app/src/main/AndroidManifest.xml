@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".TeamCreateActivity" />
         <activity android:name=".NewWordActivity" />
-        <activity android:name=".OptionsActivity"></activity>
+        <activity android:name=".OptionsActivity" />
+        <activity android:name=".gameActivity"></activity>
     </application>
 
 </manifest>

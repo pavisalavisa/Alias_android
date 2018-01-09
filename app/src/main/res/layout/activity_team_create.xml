@@ -54,7 +54,7 @@
         android:clickable="true"
         android:layout_margin="16dp"
         android:layout_below="@id/players_table"
-        android:layout_alignRight="@id/players_table"
+        android:layout_alignEnd="@id/players_table"
         android:src="@mipmap/ic_add_button"
         android:onClick="addNewTeam"
         />
@@ -66,7 +66,6 @@
         android:layout_marginTop="5dp"
         android:text="@string/start_button"
         android:textSize="17pt"
-        android:elevation="0dp"
         android:onClick="startClicked"/>
 
 </RelativeLayout>
