@@ -14,19 +14,18 @@ public class Game {
     private LinkedList<Team> teams=new LinkedList<Team>();
     private CountDownTimer timer;
     private GameRules rules;
+    private Team currentTeamPlaying;
+
+    public Team getCurrentTeamPlaying() {
+        return currentTeamPlaying;
+    }
+
+    public void setCurrentTeamPlaying(Team currentTeamPlaying) {
+        this.currentTeamPlaying = currentTeamPlaying;
+    }
 
     private Game(){
-        timer= new CountDownTimer(60000,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
 
-            }
-
-            @Override
-            public void onFinish() {
-
-            }
-        };
     }
 
     public static Game getCurrentGame(){
@@ -46,6 +45,7 @@ public class Game {
         }
         Team tempTeam=new Team(teamName,playerOne,playerTwo);
         currentGame.teams.add(tempTeam);
+        currentTeamPlaying=tempTeam;
         return true;
     }
 
@@ -70,4 +70,6 @@ public class Game {
     {
         return teams.iterator();
     }
+
+
 }

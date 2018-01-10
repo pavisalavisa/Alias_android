@@ -12,6 +12,9 @@ public class GameRules {
     private static GameRules longGame=new GameRules(60,50);
     private static GameRules ultraLongGame=new GameRules(60,100);
 
+    public static final int rightAnswerPoints=1;
+    public static final int wrongAnswerPoints=-1;
+
     public GameRules(int roundDurationInSeconds, int pointThreshold) {
         this.roundDurationInSeconds = roundDurationInSeconds;
         this.pointThreshold = pointThreshold;

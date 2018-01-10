@@ -16,8 +16,8 @@ import java.util.Iterator;
 
 public class TeamCreateActivity extends AppCompatActivity {
     private Game game;
-    DialogFragment dialog;
-    TableLayout table;
+    private DialogFragment dialog;
+    private TableLayout table;
     static Boolean backgroundFlag=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
