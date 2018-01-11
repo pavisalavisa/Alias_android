@@ -23,4 +23,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.pavisalavisa.alias", appContext.getPackageName());
     }
+
 }

@@ -104,6 +104,7 @@ public class gameActivity extends AppCompatActivity {
             try {
                 SQLiteOpenHelper aliasDatabaseHelper = new AliasDatabaseHelper(gameActivity.this);
                 SQLiteDatabase db = aliasDatabaseHelper.getReadableDatabase();
+                System.out.println(db.getVersion());
                 int randomID=((AliasDatabaseHelper)aliasDatabaseHelper).getRandomRow();
                 System.out.println("Random number is"+randomID);
                 System.out.println("The size od DB is "+DatabaseUtils.queryNumEntries(db,"ITEMS"));
@@ -115,8 +116,7 @@ public class gameActivity extends AppCompatActivity {
                 cursor.moveToFirst();
                 wordFromDB=cursor.getString(0);
             } catch (SQLiteException e) {
-                Toast toast = Toast.makeText(gameActivity.this, "DB unavailable!", Toast.LENGTH_SHORT);
-                toast.show();
+                e.printStackTrace();
                 return false;
             }
             return true;
@@ -128,7 +128,12 @@ public class gameActivity extends AppCompatActivity {
     }
 
     private void showScore(){
+        //popScoreDialog();
+    }
 
+    private void popScoreDialog(){
+        dialogFragment=new ScoreBoardFragment();
+        dialogFragment.show(getFragmentManager(),"ScoreBoardFragment");
     }
 
 }
