@@ -37,7 +37,7 @@
             android:layout_marginEnd="8dp"
             android:background="@color/colorAccent"
             android:onClick="wrongAnswerButtonClicked"
-            android:text="Wrong!"/>
+            android:text="@string/wrong"/>
         <Button
             android:id="@+id/right_answer_button"
             android:layout_width="0dp"
@@ -45,8 +45,8 @@
             android:layout_weight="1"
             android:layout_marginStart="8dp"
             android:background="@color/colorAccent"
-            android:onClick ="righAnswerButtonClicked"
-            android:text="Right!"/>
+            android:onClick ="rightAnswerButtonClicked"
+            android:text="@string/right"/>
     </LinearLayout>
 
 </RelativeLayout>

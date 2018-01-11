@@ -53,6 +53,7 @@ public class NewTeamFragment extends DialogFragment{
                 if(!Game.getCurrentGame().addTeam(teamName,playerOne,playerTwo)){
                     Toast toast= Toast.makeText(v.getContext(),"Don't leave out anything",Toast.LENGTH_SHORT);
                     toast.show();
+                    return;
                 }
                 NewTeamFragment.this.dismiss();
                 notifyParentActivity();

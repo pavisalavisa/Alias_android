@@ -16,11 +16,11 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="reading">Reading</string>
     <string name="guessing">Guessing</string>
     <string name="go">GO!</string>
-
+    <string name="right">Right!</string>
+    <string name="wrong">Wrong!</string>
+    <string name="time_up">Time\'s up!</string>
 
 </resources>

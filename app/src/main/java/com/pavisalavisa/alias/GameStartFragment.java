@@ -29,6 +29,7 @@ public class GameStartFragment extends DialogFragment {
         dialogFragmentView=inflater.inflate(R.layout.fragment_game_start,null);
         builder.setView(dialogFragmentView);
         wireUpViews();
+        this.setCancelable(false);
         return builder.create();
     }
     private void wireUpViews(){

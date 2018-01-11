@@ -2,8 +2,11 @@ package com.pavisalavisa.alias;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.Random;
 
 /**
  * Created by krist on 5.1.2018..
@@ -37,5 +40,11 @@ public class AliasDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE ITEMS(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "WORD TEXT);");
 
+    }
+
+    public int getRandomRow(){
+        //Returns pseudorandom integer from 1 to noOfRows(inclusive)
+        int noOfRows=(int)DatabaseUtils.queryNumEntries(this.getReadableDatabase(),"ITEMS");
+        return new Random().nextInt(noOfRows)+1;
     }
 }
