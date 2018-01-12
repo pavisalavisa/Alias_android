@@ -16,17 +16,9 @@ public class Game {
     private GameRules rules;
     private Team currentTeamPlaying;
 
-    public Team getCurrentTeamPlaying() {
-        return currentTeamPlaying;
-    }
 
-    public void setCurrentTeamPlaying(Team currentTeamPlaying) {
-        this.currentTeamPlaying = currentTeamPlaying;
-    }
 
-    private Game(){
-
-    }
+    private Game(){    }
 
     public static Game getCurrentGame(){
         if(currentGame==null) {
@@ -45,8 +37,13 @@ public class Game {
         }
         Team tempTeam=new Team(teamName,playerOne,playerTwo);
         currentGame.teams.add(tempTeam);
-        currentTeamPlaying=tempTeam;
+        if(teams.size()==1){
+            currentTeamPlaying=tempTeam;
+        }
         return true;
+    }
+    public Team getCurrentTeamPlaying() {
+        return currentTeamPlaying;
     }
 
     public void setRules(int duration,int threshold){
@@ -68,8 +65,17 @@ public class Game {
 
     public Iterator<Team> getTeamIterator()
     {
-        return teams.iterator();
+        return teams.listIterator();
     }
 
+    public void nextRound(){
+        currentTeamPlaying.nextRound();
+        if(teams.indexOf(currentTeamPlaying)==teams.size()-1) {
+            currentTeamPlaying = teams.getFirst();
+        }
+        else{
+            currentTeamPlaying=teams.get(teams.indexOf(currentTeamPlaying)+1);
+        }
+    }
 
 }

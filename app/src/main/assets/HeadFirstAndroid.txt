@@ -1,14 +1,9 @@
 
-Head First: Android
-Development
-Dawn Griffiths
-David Griffiths
-Beijing ? Cambridge ? Farnham ? K?ln ? Sebastopol ? Tokyo
 To our friends and family. Thank you so much for all your love and support.
 Special Upgrade Offer
 If you purchased this ebook directly from oreilly.com, you have the following benefits:
 DRM-free ebooks  use your ebooks across devices without restrictions or limitations
-Multiple formats  use on your laptop, tablet, or phone
+Multiple formats  use on your laptop tablet or phone
 Lifetime access, with free updates
 Dropbox syncing  your files, anywhere
 If you purchased this ebook from another retailer, you can upgrade your ebook to take advantage of all
@@ -18,17 +13,14 @@ Authors of Head First Android Development
 Dawn Griffiths started life as a mathematician at a top UK university, where she was awarded a firstclass
 honors degree in mathematics. She went on to pursue a career in software development and has 20
 years experience working in the IT industry.
-Before writing Head First Android Development, Dawn wrote three other Head First books (Head First
-Statistics, Head First 2D Geometry and Head First C) and has also worked on a host of other books
+Before writing Head First Android Development, Dawn wrote three other Head First books Head First
+Statistics, Head First 2D Geometry and Head First  and has also worked on a host of other books
 in the series.
-When Dawn?s not working on Head First books, you?ll find her honing her Tai Chi skills, reading, running,
-making bobbin lace, or cooking. She particularly enjoys spending time with her wonderful husband,
-David.
-David Griffiths began programming at age 12, when he saw a documentary on the work of Seymour
-Papert. At age 15, he wrote an implementation of Papert?s computer language LOGO. After studying
+When Dawn not working on Head First books find her honing her Tai Chi skills, reading, running,
+making bobbin lace, or cooking. She particularly enjoys spending time with her wonderful husband
+David Griffiths began programming at age when he saw a documentary on the work of Seymour
+Papert At age he wrote an implementation of computer language LOGO  After studying
 pure mathematics at university, he began writing code for computers and magazine articles for humans.
 He?s worked as an agile coach, a developer, and a garage attendant, but not in that order. He can write
 code in over 10 languages and prose in just one, and when not writing, coding, or coaching, he spends
-much of his spare time traveling with his lovely wife ? and coauthor ? Dawn.
-Before writing Head First Android Development, David wrote three other Head First books: Head
-First Rails, Head First Programming and Head First C.
+much of his spare time traveling with his lovely wife and coauthor

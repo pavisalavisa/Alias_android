@@ -24,7 +24,7 @@ import java.util.Random;
 
 public class AliasDatabaseHelper extends SQLiteOpenHelper {
     private Context context;
-    private static final String DB_NAME="alias_v2";
+    private static final String DB_NAME="alias_v3";
     private static final int DB_VERSION=2;
     private static final String TEXT_FILE_DIR="HeadFirstAndroid.txt";
     AliasDatabaseHelper(Context context){
@@ -58,7 +58,7 @@ public class AliasDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public int getRandomRow(){
+     int getRandomRow(){
         //Returns pseudorandom integer from 1 to noOfRows(inclusive)
         int noOfRows=(int)DatabaseUtils.queryNumEntries(this.getReadableDatabase(),"ITEMS");
         return new Random().nextInt(noOfRows)+1;
@@ -66,9 +66,11 @@ public class AliasDatabaseHelper extends SQLiteOpenHelper {
 
     private void populateDatabaseFromTextFile()throws IOException {
         String buffer;
+        int counter=0;
         BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(context.getAssets().open(TEXT_FILE_DIR)));
         while((buffer=bufferedReader.readLine())!=null) {
             addFromBuffer(buffer);
+            System.out.println("Read: " + ++counter);
         }
         bufferedReader.close();
     }

@@ -26,6 +26,7 @@ public class TeamCreateActivity extends AppCompatActivity {
         game=Game.getCurrentGame();
         table=(TableLayout)findViewById(R.id.players_table);
         buildTable();
+
     }
 
     private void buildTable(){
@@ -93,6 +94,7 @@ public class TeamCreateActivity extends AppCompatActivity {
     public void startClicked(View view){
         if(!game.hasTeams()){
             Toast toast= Toast.makeText(TeamCreateActivity.this,"Must have at least 1 team",Toast.LENGTH_SHORT);
+            toast.show();
             return;
         }
         Intent intent=new Intent(TeamCreateActivity.this,gameActivity.class);

@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        preBuildDB();
     }
 
     public void startClicked(View view){
@@ -30,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
     public void optionsClicked(View view){
         Intent intent=new Intent(MainActivity.this,OptionsActivity.class);
         startActivity(intent);
+    }
+
+
+    private void preBuildDB(){
+        AliasDatabaseHelper h=new AliasDatabaseHelper(this);
+        h.getReadableDatabase().needUpgrade(2);
     }
 
 }

@@ -58,8 +58,9 @@ public class gameActivity extends AppCompatActivity {
     }
     //Called by the GameStartFragment
     protected void startRound(){
-        currentTeamPlaying=currentGame.getLastAddedTeam();
-        startTimer(5);//TODO timer must be controlled by game rules
+        //currentGame.nextRound();
+        currentTeamPlaying=currentGame.getCurrentTeamPlaying();
+        startTimer(10);//TODO timer must be controlled by game rules
         nextWord();
     }
 
@@ -128,12 +129,17 @@ public class gameActivity extends AppCompatActivity {
     }
 
     private void showScore(){
-        //popScoreDialog();
+        popScoreDialog();
     }
 
     private void popScoreDialog(){
         dialogFragment=new ScoreBoardFragment();
         dialogFragment.show(getFragmentManager(),"ScoreBoardFragment");
+    }
+    //Called by the ScoreBoardFragment
+    void nextRound(){
+        currentGame.nextRound();
+        popStartDialog();
     }
 
 }

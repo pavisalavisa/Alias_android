@@ -58,4 +58,13 @@ public class Team {
         }
         return playerOne;
     }
+    //called by the game's nextRound() method
+    public void nextRound(){
+        if(playerReading==1){
+            playerReading=2;
+        }
+        else{
+            playerReading=1;
+        }
+    }
 }
