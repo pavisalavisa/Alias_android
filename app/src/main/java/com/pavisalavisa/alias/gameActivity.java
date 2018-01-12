@@ -15,11 +15,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Iterator;
 import java.util.Random;
 
 public class gameActivity extends AppCompatActivity {
     private DialogFragment dialogFragment;
-    private TextView timer;
     private TextView wordToGuess;
 
     private Game currentGame;
@@ -48,7 +48,6 @@ public class gameActivity extends AppCompatActivity {
     }
 
     private void wireUpViews(){
-        timer=(TextView)findViewById(R.id.countdown);
         wordToGuess=(TextView)findViewById(R.id.word_to_guess);
     }
 
@@ -58,9 +57,9 @@ public class gameActivity extends AppCompatActivity {
     }
     //Called by the GameStartFragment
     protected void startRound(){
-        //currentGame.nextRound();
         currentTeamPlaying=currentGame.getCurrentTeamPlaying();
-        startTimer(10);//TODO timer must be controlled by game rules
+        //startTimer(currentGame.getGameDuration());
+        startTimer(5);
         nextWord();
     }
 
@@ -138,8 +137,37 @@ public class gameActivity extends AppCompatActivity {
     }
     //Called by the ScoreBoardFragment
     void nextRound(){
+        if(someoneWon()){
+            declareWinner();
+            return;
+        }
         currentGame.nextRound();
         popStartDialog();
     }
+
+    private Boolean someoneWon(){
+        Iterator<Team> iter=currentGame.getTeamIterator();
+        while(iter.hasNext()){
+            if(iter.next().getPoints()>5){
+           // if(iter.next().getPoints()>=currentGame.getPointThreshold()){
+               return true;
+            }
+        }
+        return false;
+    }
+    private void declareWinner(){
+        /*
+        Decalre winner, show scoreboard and ask if they wanna play again.
+         */
+        Team winningTeam=currentGame.getWinningTeam();
+        popWinnerDialog();
+    }
+
+    private void popWinnerDialog(){
+        dialogFragment=new WinnerDialogFragment();
+        dialogFragment.show(getFragmentManager(),"WinnerFragment");
+    }
+
+
 
 }

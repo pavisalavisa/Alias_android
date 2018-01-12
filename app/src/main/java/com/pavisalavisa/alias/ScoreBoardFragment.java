@@ -37,7 +37,6 @@ public class ScoreBoardFragment extends DialogFragment {
        builder.setView(dialogFragmentView);
        this.setCancelable(false);
        wireUpViews();
-       dialogFragmentView=inflater.inflate(R.layout.fragment_score_board,null);
        return builder.create();
     }
 

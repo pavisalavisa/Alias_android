@@ -31,6 +31,10 @@ public class Team {
         points+=newPoints;
     }
 
+    public void resetPoints(){
+        points=0;
+    }
+
     public String getTeamName() {
         return teamName;
     }

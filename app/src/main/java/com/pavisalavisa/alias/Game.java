@@ -18,7 +18,9 @@ public class Game {
 
 
 
-    private Game(){    }
+    private Game(){
+        rules=GameRules.fastGame;
+    }
 
     public static Game getCurrentGame(){
         if(currentGame==null) {
@@ -29,6 +31,12 @@ public class Game {
 
     public static void endGame(){
         currentGame=null;
+    }
+
+    public static void resetPoints(){
+        for (Team x:currentGame.teams) {
+            x.resetPoints();
+        }
     }
 
     public Boolean addTeam(String teamName,String playerOne,String playerTwo){
@@ -76,6 +84,30 @@ public class Game {
         else{
             currentTeamPlaying=teams.get(teams.indexOf(currentTeamPlaying)+1);
         }
+    }
+    public int getPointThreshold(){
+        return rules.getPointThreshold();
+    }
+
+    /**
+     *
+     * @return duration of the game in seconds
+     */
+    public int getGameDuration(){
+        return rules.getRoundDurationInSeconds();
+    }
+
+    public Team getWinningTeam(){
+        Iterator<Team> iter=getTeamIterator();
+        Team winningTeam=iter.next();
+        Team temporaryTeam;
+        while(iter.hasNext()){
+            temporaryTeam=iter.next();
+            if(temporaryTeam.getPoints()>winningTeam.getPoints()){
+                winningTeam=temporaryTeam;
+            }
+        }
+        return winningTeam;
     }
 
 }
