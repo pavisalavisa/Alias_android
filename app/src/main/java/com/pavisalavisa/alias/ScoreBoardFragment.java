@@ -98,7 +98,7 @@ public class ScoreBoardFragment extends DialogFragment {
 
     private void setAlternatingBackground(TableRow tableRow){
         if(backgroundFlag) {
-            tableRow.setBackgroundColor(Color.parseColor("#add8e6"));
+            tableRow.setBackgroundColor(getResources().getColor(R.color.colorAccent));
         }
         backgroundFlag=!backgroundFlag;
 

@@ -18,8 +18,8 @@
             android:id="@+id/first_row"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#add8e6"
-            android:alpha="0.8">
+            android:background="@color/colorAccent"
+            android:alpha="0.9">
 
             <TextView
                 android:layout_width="0dp"
@@ -27,6 +27,7 @@
                 android:layout_weight="2"
                 android:text="@string/team"
                 android:textSize="20sp"
+                android:paddingStart="4dp"
 
                 />
             <TextView
@@ -66,6 +67,6 @@
         android:layout_marginTop="5dp"
         android:text="@string/start_button"
         android:textSize="17pt"
-        android:onClick="startClicked"/>
-
-</RelativeLayout>
+        android:onClick="startClicked"
+        android:background="@color/colorAccent"/>
+    </RelativeLayout>

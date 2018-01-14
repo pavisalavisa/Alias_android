@@ -77,6 +77,7 @@ public class TeamCreateActivity extends AppCompatActivity {
         TextView teamName=new TextView(this);
         teamName.setText(text);
         teamName.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+        teamName.setPadding(4,0,0,0);
         teamName.setLayoutParams(new TableRow.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,
                 TableRow.LayoutParams.WRAP_CONTENT, (float)weight));
         return teamName;
@@ -84,7 +85,7 @@ public class TeamCreateActivity extends AppCompatActivity {
 
     private void setAlternatingBackground(TableRow tableRow){
         if(backgroundFlag) {
-                tableRow.setBackgroundColor(Color.parseColor("#add8e6"));
+            tableRow.setBackgroundColor(getResources().getColor(R.color.colorAccent));
             }
         backgroundFlag=!backgroundFlag;
 

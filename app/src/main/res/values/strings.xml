@@ -28,5 +28,8 @@
     <string name="points">Points</string>
     <string name="new_teams">New teams!</string>
     <string name="same_teams">Same Teams!</string>
+    <string name="options">Options</string>
+    <string name="round_duration">Round duration</string>
+    <string name="confirm">Confirm</string>
 
 </resources>
